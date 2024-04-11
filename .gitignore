@@ -456,3 +456,4 @@ MigrationBackup/
 # Added by LDR
 # Dataiku folder
 Dataiku/
+models/
