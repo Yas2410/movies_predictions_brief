@@ -446,11 +446,12 @@
 			text-decoration: none;
 			color: #414f57;
 			cursor: pointer;
-			display: inline-block;
-			font-size: 1em;
+			/*display: inline-block;*/
+			font-size: 12px;
 			font-weight: 300;
 			padding-left: 2.4em;
 			padding-right: 0.75em;
+			display: flex;
 			position: relative;
 		}
 
@@ -1053,3 +1054,89 @@
 		body.is-ie #wrapper {
 			height: 100%;
 		}
+
+/*AJOUT DE CSS "formulaire.html"*/
+.form-title{
+	font-size: 18px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+input[type="number"],
+input[type="text"],
+input[type="submit"],
+.radio-btn label {
+  width: 100%;
+  margin-bottom: 20px; 
+  box-sizing: border-box; 
+}
+
+input[type="number"],
+input[type="text"] {
+	padding: 5px;
+    border: 1px solid #ccc;
+    font-size: 12px;
+}
+
+input[type="submit"] {
+  border: 1px solid #ccc; 
+  background: transparent;
+  cursor: pointer;
+  font-size: 14px; 
+  display: block; 
+  margin: 0 auto; 
+}
+
+input[type="submit"]:hover {
+  border-color: #333;
+}
+
+.radio-btn {
+  margin-bottom: 20px;
+}
+
+.radio-btn label {
+  margin-right: 20px;
+  font-size: 12px; 
+}
+
+.radio-btn input[type="radio"] {
+  margin-right: 5px;
+}
+
+/*index.html*/
+.movie_pix {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.movie_pix img{
+	width: 100%;
+}
+
+/*Style sur les btn submit*/
+a.button:hover {
+	background-color: #414f57;
+	color: white !important;
+	font-weight: bold !important;
+	border-color: white !important;
+}
+
+input[type="submit"].button:hover {
+	background-color: #414f57 !important;
+	color: white !important;
+	font-weight: bold !important;
+	border-color: white !important;
+}
+
+/*prediction_results.html*/
+.prediction-result{
+	font-size: 15px;
+	font-weight: bold;
+	margin-top: 30px;
+}
+
+.refresh-btn {
+	margin-bottom: 20px !important;
+}
