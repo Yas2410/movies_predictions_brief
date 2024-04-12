@@ -25,7 +25,7 @@ CMD ["python", "app.py"]
 - Créer un repo dans Docker Hub (https://hub.docker.com/)  
     => J'ai appelé mon repo luddrt/yaslud
 
-- Reconstruire l'imae pour pouvoir l'envoyer dans le repo :  
+- Reconstruire l'image pour pouvoir l'envoyer dans le repo :  
     `docker build -t luddrt/yaslud:latest .`  
     `docker push luddrt/yaslud:latest`
 
