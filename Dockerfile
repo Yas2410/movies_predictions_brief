@@ -1,6 +1,10 @@
 FROM python:3.11
 
-COPY . /src
+COPY ./models/ /src/models
+COPY ./static/ /src/static
+COPY ./templates/ /src/templates
+COPY ./app.py /src
+COPY ./requirements.txt /src
 
 WORKDIR /src
 
