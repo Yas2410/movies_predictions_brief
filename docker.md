@@ -30,17 +30,29 @@ CMD ["python", "app.py"]
     `docker push luddrt/yaslud:latest`
 
 - Dans Azure :
-    - Créer une Web app
+    - Créer une Web app : `app-docker-p5`
     - Choisir le mode de publication "Conteneur"
     - Lier l'image précédemment exportée sur Docker Hub
 
+- Dans un navigateur internet :  
+https://app-docker-p5.azurewebsites.net/
+
+# Publication de l'image dans un registre de conteneurs Azure
+
+Avec Azure CLI :  
+Connexion azure : `az login`  
+Connexion au registre : `az acr login --name registryludo`  
+Alias de l'image à publier : `docker tag yaslud registryludo.azurecr.io/projets/yaslud`  
+Publication : `docker push registryludo.azurecr.io/projets/yaslud`  
+
 # Déploiement dans Azure (Container instance)
 
-Je repars de mon image publiée dans Docker Hub
-
 Dans Azure Cloud Shell (bash) :  
-`DNS_NAME_LABEL=aci-ludo-$RANDOM`  
-`az container create --resource-group rg-Ludo --name container-ludo --image index.docker.io/luddrt/yaslud:latest --ports 5000 --dns-name-label $DNS_NAME_LABEL --location westeurope`
+Génération d'un DNS unique : `DNS_NAME_LABEL=aci-ludo-$RANDOM`  
+Création du conteneur avec l'image Docker Hub :  
+`az container create --resource-group rg-Ludo --name container-ludo --image index.docker.io/luddrt/yaslud:latest --ports 5000 --dns-name-label $DNS_NAME_LABEL --location westeurope`  
+Création du conteneur avec l'image Azure Conteneur Registry :  
+`az container create --resource-group rg-Ludo --name container-ludo2 --image registryludo.azurecr.io/projets/yaslud --ports 5000 --dns-name-label $DNS_NAME_LABEL --location westeurope`
 
 Dans un navigateur internet :  
 http://aci-ludo-1016.westeurope.azurecontainer.io:5000/
