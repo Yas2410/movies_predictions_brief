@@ -28,10 +28,11 @@ def predict():
             title_year = request.form.get("title_year", type=int)
             aspect_ratio = request.form.get("aspect_ratio", type=int)
             movie_fb_likes = request.form.get("movie_fb_likes", type=int)
-            country_UK = request.form.get("country_UK", type=lambda x: x == "on")  # noqa: E501
-            country_USA = request.form.get("country_USA", type=lambda x: x == "on")  # noqa: E501
+            country = request.form.get("country")
+            country_UK = (country == "UK")
+            country_USA = (country == "USA")
             other_actors_fb_likes = request.form.get("other_actors_fb_likes", type=int)  # noqa: E501
-            critic_reviews_ratio = request.form.get("critic_reviews_ratio", type=int)  # noqa: E501
+            critic_reviews_ratio = request.form.get("critic_reviews_ratio", type=float)  # noqa: E501
 
             # Avec linter Flake8, limites du nbr caractères : "# noqa: E501" pour ignorer cela
 
@@ -53,6 +54,7 @@ def predict():
                 other_actors_fb_likes,
                 critic_reviews_ratio
             ]])
+            #print(features)
 
             # On effectue la prédiction avec le modèle
             prediction = prediction_model.predict(features)
