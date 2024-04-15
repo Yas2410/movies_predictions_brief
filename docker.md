@@ -56,3 +56,9 @@ Création du conteneur avec l'image Azure Conteneur Registry :
 
 Dans un navigateur internet :  
 http://aci-ludo-1016.westeurope.azurecontainer.io:5000/
+
+Second lien : 
+http://movieprediction-yasludo.francecentral.azurecontainer.io:5000/
+
+NB : L'adresse générée lors du déploiement ne mentionne pas le port.
+Ne pas oublier de l'ajouter à la fin de l'url
